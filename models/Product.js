@@ -3,24 +3,24 @@ import mongoose from 'mongoose';
 const ProductSchema = mongoose.Schema({
 	name: {
 		type: String,
-		required: true,
+		required: true
 	},
 	price: {
 		type: Number,
-		required: true,
+		required: true
 	},
 	description: {
 		type: String,
-		required: true,
+		required: true
 	},
 	imageURL: {
 		type: String,
-		required: true,
+		required: true
 	},
-	date: {
-		type: Date,
-		default: Date.now,
-	},
+	id: {
+		type: String,
+		required: true
+	}
 });
 
 export default mongoose.model('Product', ProductSchema);

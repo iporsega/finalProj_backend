@@ -1,4 +1,5 @@
 import express from 'express';
+import { resetWatchers } from './../node_modules/nodemon/lib/monitor/watch.js';
 import Product from '../models/Product.js';
 const router = express.Router();
 
@@ -25,12 +26,15 @@ router.get('/:productId', async (req, res) => {
 
 // add a new product
 router.post('/', async (req, res) => {
+	console.log(req); 
 	const product = new Product({
 		name: req.body.name,
 		price: req.body.price,
 		imageURL: req.body.imageURL,
 		description: req.body.description,
+		id: req.body.id,
 	});
+	console.log(product);
 
 	// save to DB
 	try {
